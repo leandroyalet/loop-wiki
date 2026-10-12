@@ -1,0 +1,201 @@
+/* Loop Monokai — a dark Monokai theme for the loop-engineering vault.
+   Applied to both base modes so the vault always renders as Monokai. */
+
+.theme-dark,
+.theme-light {
+  /* ---- Monokai palette ---- */
+  --mk-bg:        #272822;
+  --mk-bg-dark:   #1e1f1c;
+  --mk-bg-darker: #171814;
+  --mk-line:      #3e3d32;
+  --mk-select:    #49483e;
+  --mk-fg:        #f8f8f2;
+  --mk-fg-dim:    #cfcfc2;
+  --mk-comment:   #75715e;
+  --mk-yellow:    #e6db74;
+  --mk-orange:    #fd971f;
+  --mk-pink:      #f92672;
+  --mk-purple:    #ae81ff;
+  --mk-cyan:      #66d9ef;
+  --mk-green:     #a6e22e;
+
+  color-scheme: dark;
+
+  /* ---- Named colors used across Obsidian ---- */
+  --color-red: var(--mk-pink);
+  --color-red-rgb: 249, 38, 114;
+  --color-orange: var(--mk-orange);
+  --color-orange-rgb: 253, 151, 31;
+  --color-yellow: var(--mk-yellow);
+  --color-yellow-rgb: 230, 219, 116;
+  --color-green: var(--mk-green);
+  --color-green-rgb: 166, 226, 46;
+  --color-cyan: var(--mk-cyan);
+  --color-cyan-rgb: 102, 217, 239;
+  --color-blue: var(--mk-cyan);
+  --color-blue-rgb: 102, 217, 239;
+  --color-purple: var(--mk-purple);
+  --color-purple-rgb: 174, 129, 255;
+  --color-pink: var(--mk-pink);
+  --color-pink-rgb: 249, 38, 114;
+
+  /* Base ramp (dark → light) */
+  --color-base-00: var(--mk-bg-darker);
+  --color-base-05: var(--mk-bg-dark);
+  --color-base-10: #22231e;
+  --color-base-20: var(--mk-bg);
+  --color-base-25: #2e2f29;
+  --color-base-30: var(--mk-line);
+  --color-base-35: var(--mk-select);
+  --color-base-40: #5a594c;
+  --color-base-50: var(--mk-comment);
+  --color-base-60: #a09d88;
+  --color-base-70: var(--mk-fg-dim);
+  --color-base-100: var(--mk-fg);
+
+  /* Accent: Monokai pink */
+  --accent-h: 338;
+  --accent-s: 95%;
+  --accent-l: 56%;
+  --color-accent: var(--mk-pink);
+  --color-accent-1: #fa4a8a;
+  --color-accent-2: #fb6ea1;
+
+  /* ---- Surfaces ---- */
+  --background-primary: var(--mk-bg);
+  --background-primary-alt: var(--mk-bg-dark);
+  --background-secondary: var(--mk-bg-dark);
+  --background-secondary-alt: var(--mk-bg-darker);
+  --background-modifier-border: var(--mk-line);
+  --background-modifier-border-hover: var(--mk-select);
+  --background-modifier-border-focus: var(--mk-comment);
+  --background-modifier-hover: rgba(73, 72, 62, 0.6);
+  --background-modifier-active-hover: rgba(249, 38, 114, 0.15);
+  --background-modifier-form-field: var(--mk-bg-darker);
+  --background-modifier-error: var(--mk-pink);
+  --background-modifier-success: var(--mk-green);
+  --titlebar-background: var(--mk-bg-darker);
+  --titlebar-background-focused: var(--mk-bg-darker);
+  --ribbon-background: var(--mk-bg-darker);
+  --tab-container-background: var(--mk-bg-darker);
+  --tab-background-active: var(--mk-bg);
+  --divider-color: var(--mk-line);
+
+  /* ---- Text ---- */
+  --text-normal: var(--mk-fg);
+  --text-muted: var(--mk-fg-dim);
+  --text-faint: var(--mk-comment);
+  --text-on-accent: var(--mk-bg-darker);
+  --text-accent: var(--mk-pink);
+  --text-accent-hover: var(--color-accent-2);
+  --text-error: var(--mk-pink);
+  --text-success: var(--mk-green);
+  --text-warning: var(--mk-orange);
+  --text-selection: rgba(73, 72, 62, 0.9);
+  --text-highlight-bg: rgba(230, 219, 116, 0.25);
+  --text-highlight-bg-active: rgba(253, 151, 31, 0.4);
+  --caret-color: var(--mk-fg);
+
+  --interactive-normal: var(--mk-line);
+  --interactive-hover: var(--mk-select);
+  --interactive-accent: var(--mk-pink);
+  --interactive-accent-hover: var(--color-accent-1);
+
+  /* ---- Markdown ---- */
+  --h1-color: var(--mk-pink);
+  --h2-color: var(--mk-orange);
+  --h3-color: var(--mk-yellow);
+  --h4-color: var(--mk-green);
+  --h5-color: var(--mk-cyan);
+  --h6-color: var(--mk-purple);
+  --bold-color: var(--mk-orange);
+  --italic-color: var(--mk-yellow);
+
+  --link-color: var(--mk-cyan);
+  --link-color-hover: #8fe4f4;
+  --link-unresolved-color: var(--mk-pink);
+  --link-unresolved-opacity: 0.75;
+  --link-unresolved-decoration-color: rgba(249, 38, 114, 0.5);
+  --link-external-color: var(--mk-green);
+  --link-external-color-hover: #c0f06a;
+
+  --tag-color: var(--mk-purple);
+  --tag-color-hover: var(--mk-purple);
+  --tag-background: rgba(174, 129, 255, 0.12);
+  --tag-background-hover: rgba(174, 129, 255, 0.22);
+  --tag-border-color: rgba(174, 129, 255, 0.3);
+
+  --blockquote-border-color: var(--mk-yellow);
+  --blockquote-color: var(--mk-fg-dim);
+  --hr-color: var(--mk-line);
+  --checkbox-color: var(--mk-green);
+  --checkbox-color-hover: #c0f06a;
+  --checkbox-border-color: var(--mk-comment);
+  --checklist-done-color: var(--mk-comment);
+  --list-marker-color: var(--mk-pink);
+
+  --table-header-background: var(--mk-bg-dark);
+  --table-header-color: var(--mk-orange);
+  --table-border-color: var(--mk-line);
+  --table-row-alt-background: rgba(30, 31, 28, 0.5);
+  --table-row-background-hover: rgba(73, 72, 62, 0.4);
+
+  /* ---- Code (Monokai syntax) ---- */
+  --code-background: var(--mk-bg-darker);
+  --code-normal: var(--mk-fg);
+  --code-comment: var(--mk-comment);
+  --code-keyword: var(--mk-pink);
+  --code-operator: var(--mk-pink);
+  --code-function: var(--mk-green);
+  --code-string: var(--mk-yellow);
+  --code-value: var(--mk-purple);
+  --code-property: var(--mk-cyan);
+  --code-tag: var(--mk-pink);
+  --code-punctuation: var(--mk-fg-dim);
+  --code-important: var(--mk-orange);
+
+  /* ---- Properties (frontmatter) ---- */
+  --metadata-label-text-color: var(--mk-comment);
+  --metadata-input-text-color: var(--mk-fg-dim);
+
+  /* ---- Graph ---- */
+  --graph-line: var(--mk-select);
+  --graph-node: var(--mk-cyan);
+  --graph-node-focused: var(--mk-pink);
+  --graph-node-unresolved: var(--mk-comment);
+  --graph-node-tag: var(--mk-purple);
+  --graph-node-attachment: var(--mk-yellow);
+  --graph-text: var(--mk-fg-dim);
+
+  /* ---- Scrollbars ---- */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(117, 113, 94, 0.45);
+  --scrollbar-active-thumb-bg: rgba(117, 113, 94, 0.75);
+}
+
+/* Inline code in yellow, like strings in Monokai */
+.markdown-rendered :not(pre) > code,
+.cm-s-obsidian span.cm-inline-code:not(.cm-formatting) {
+  color: var(--mk-yellow);
+}
+
+/* Active file / nav item gets the pink accent bar */
+.nav-file-title.is-active,
+.tree-item-self.is-active {
+  color: var(--mk-fg);
+  background-color: rgba(249, 38, 114, 0.12);
+  box-shadow: inset 2px 0 0 var(--mk-pink);
+}
+
+/* Callouts mapped onto the palette */
+.callout[data-callout="note"],
+.callout[data-callout="info"]     { --callout-color: var(--color-cyan-rgb); }
+.callout[data-callout="tip"],
+.callout[data-callout="success"]  { --callout-color: var(--color-green-rgb); }
+.callout[data-callout="warning"],
+.callout[data-callout="question"] { --callout-color: var(--color-orange-rgb); }
+.callout[data-callout="danger"],
+.callout[data-callout="bug"],
+.callout[data-callout="failure"]  { --callout-color: var(--color-pink-rgb); }
+.callout[data-callout="quote"],
+.callout[data-callout="example"]  { --callout-color: var(--color-purple-rgb); }
