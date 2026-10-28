@@ -5,9 +5,3 @@
 
 [build.environment]
   NODE_VERSION = "22"
-
-# Keep the Quartz checkout and its plugins between deploys (cold install is ~5-9 min).
-[[plugins]]
-  package = "netlify-plugin-cache"
-  [plugins.inputs]
-    paths = [".quartz-build"]
