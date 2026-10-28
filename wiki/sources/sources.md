@@ -4,7 +4,7 @@ branch: sources
 tags: [loop-engineering, hub]
 sources: []
 created: 2026-10-11
-updated: 2026-10-12
+updated: 2026-10-27
 status: draft
 ---
 # Sources
@@ -50,5 +50,28 @@ One summary page per file in `raw/`. Each page links to the raw file, lists key 
 | [[src-tan-benny-automation]] | repo | Slack triage → repro → fix automations. Draft-only, fail closed. |
 | [[src-tan-pstack-loop-principles]] | repo | Idempotency, never block on the human, prove it works, verifiable units, encode lessons, guard context |
 | [[src-tan-x-short-posts]] | 2026-05 to 10 | Token cost, organic architecture, gardener, pstack slimming |
+
+### Secondary / third-party (ingested 2026-10-15)
+| Source | Author | Published | What it contributes |
+|---|---|---|---|
+| [[src-inside-pstack-report]] | unnamed | 2026-10-14 | pstack v0.15.25 read end to end: enforcement scripts, 0.15.24–25 changes, an outside critique, the Claude Code port |
+
+### Tools and docs (ingested 2026-10-16 to 2026-10-19)
+| Source | Author | Published | What it contributes |
+|---|---|---|---|
+| [[src-agentos-docs]] | Joe Contini | 2026 (docs to 2026-07-17) | Agent empathy (design for the smallest model), the observer bus, a propose ↔ review loop with a 5-round cap |
+| [[src-ouroboros]] | Ouro Labs | 2026 (repo to 2026-10-19) | Ambiguity-gated Seeds, model-may-only-withhold evaluation, hidden graders, the evolutionary loop and its convergence stops |
+| [[src-omp]] | Can Bölük / Stencil Labs | 2026 (repo to 2026-10-19) | Harness-as-variable (hashline), self-audited `/goal`, exit-code `/loop`, `/ratchet` hill-climb, the advisor, and the robomp factory (2,773 PRs) |
+| [[src-openprose]] | OpenProse, Inc. | 2026 (repo to 2026-10-07) | Contracts as goal specs, executor/evaluator roles, results as claims with evidence, a fingerprint reconciler for standing goals (judge loop retired) |
+
+### Practitioner write-ups (ingested 2026-10-27)
+| Source | Author | Published | What it contributes |
+|---|---|---|---|
+| [[src-osmani-claude-code-code-review]] | [[addy-osmani]] (Claude Code team) | 2026-10-26 | Layered review over fast rollback, risk-tiered human approval, incidents as the reviewer's eval, review convergence (the 50-cycle PR) |
+
+### Anthropic guidance (ingested 2026-10-27)
+| Source | Author | Published | What it contributes |
+|---|---|---|---|
+| [[src-anthropic-fold-subagents]] | Diane Sarkis ([[anthropic]], Applied AI) | 2026-10-22 | When to fold subagents into one loop; progressive disclosure via skills and tool search; the single-loop design; task-completion evals and a one-at-a-time migration |
 
 **Wanted:** see [[open-questions#Sources to find]].

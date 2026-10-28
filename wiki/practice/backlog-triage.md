@@ -2,9 +2,9 @@
 type: practice
 branch: practice
 tags: [loop-engineering, practice, triage, issues]
-sources: ["[[src-pocock-triage-skill]]", "[[src-osmani-loop-engineering]]", "[[src-tan-benny-automation]]", "[[src-tan-loops-you-can-trust]]"]
+sources: ["[[src-pocock-triage-skill]]", "[[src-osmani-loop-engineering]]", "[[src-tan-benny-automation]]", "[[src-tan-loops-you-can-trust]]", "[[src-omp]]"]
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-19
 status: draft
 ---
 # Backlog triage (making work agent-ready)
@@ -31,6 +31,15 @@ From [[src-pocock-triage-skill]]:
 
 ## Automated variant (Tan's benny)
 Triage runs as an **event-triggered automation** on each Slack report. It analyses screenshots and videos, deduces which feature is meant, checks the reporter's version, searches duplicates, and files a ticket only for clear net-new bugs. Its one-line verdict marker then **triggers the repro automation** ([[src-tan-benny-automation]], [[src-tan-loops-you-can-trust]]). Compare Pocock's skill, which is human-invoked and recommends and then waits. See [[stage-gated-pipeline]].
+
+## Automated variant (omp's robomp)
+robomp classifies every new issue before doing anything else, into exactly one of `bug`, `wontfix`, `documentation`, `enhancement`, `proposal`, `question`, `invalid` or `duplicate`, plus a priority and labels. Its rules ([[src-omp]]):
+- **Duplicate and already-fixed checks first.** *"one search proves nothing"*. If the reporter's version fails but the current worktree passes, it is a `duplicate` that cites the fix release.
+- **The merit gate:** all five must hold for `bug`. *"Tables, line-cited Evidence, N-of-N repros, Acceptance criteria measure effort, NEVER severity."* AI and scanner reports *"can hallucinate components"*, so verify the premise.
+- **Precedent binds.** A prior `wontfix` on the same complaint is adopted and *never relitigated*.
+- **Prefer `wontfix` to a low-value PR:** *"unwanted PR wastes review/lands unwanted code"*. The maintainer can still say *"fix it anyway"*.
+
+omp's own `/fix-issues` command is the human-in-the-loop counterpart. It reproduces each issue on `main` in parallel subagents, fixes it in a worktree and commits, but *"Do NOT push; human pushes/opens PR"* ([[src-omp]]).
 
 ## Failure modes
 From [[src-pocock-triage-skill]]:

@@ -2,9 +2,9 @@
 type: synthesis
 branch: syntheses
 tags: [loop-engineering, synthesis, checklist]
-sources: ["[[src-osmani-loop-engineering]]", "[[src-huntley-ralph]]", "[[src-claude-code-scheduled-tasks]]", "[[src-anthropic-building-effective-agents]]", "[[src-tns-loop-engineering]]", "[[src-pocock-ralph-tips]]", "[[src-pocock-ai-coding-dictionary]]", "[[src-pocock-git-guardrails-hook]]", "[[src-pocock-afk-ralph-streaming]]", "[[src-tan-loops-you-can-trust]]", "[[src-tan-pstack-guide-overnight]]", "[[src-tan-pstack-loop-principles]]"]
+sources: ["[[src-osmani-loop-engineering]]", "[[src-huntley-ralph]]", "[[src-claude-code-scheduled-tasks]]", "[[src-anthropic-building-effective-agents]]", "[[src-tns-loop-engineering]]", "[[src-pocock-ralph-tips]]", "[[src-pocock-ai-coding-dictionary]]", "[[src-pocock-git-guardrails-hook]]", "[[src-pocock-afk-ralph-streaming]]", "[[src-tan-loops-you-can-trust]]", "[[src-tan-pstack-guide-overnight]]", "[[src-tan-pstack-loop-principles]]", "[[src-anthropic-fold-subagents]]"]
 created: 2026-10-11
-updated: 2026-10-12
+updated: 2026-10-27
 status: draft
 ---
 # Loop design checklist
@@ -20,6 +20,8 @@ Questions to answer before turning a loop on. Each one is distilled from the lin
 **Should this be a loop at all?**
 - [ ] Would a single prompt or a fixed workflow do the job? ([[agent-loop]], [[loop-vs-prompt-engineering]])
 - [ ] Have you run it HITL until you trust the prompt, before going AFK? ([[human-in-the-loop]], [[afk]])
+
+- [ ] Do you need several agents, or one loop with skills and tools? Keep a subagent only for measured context bloat, parallel fresh-window work, or tool and instruction conflicts. ([[folding-subagents]], [[progressive-disclosure]])
 
 **Anatomy**
 - [ ] **Trigger:** cron, self-paced, goal or event? Is polling really necessary? ([[trigger]])

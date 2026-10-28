@@ -2,9 +2,9 @@
 type: pattern
 branch: patterns
 tags: [loop-engineering, pattern, events]
-sources: ["[[src-claude-code-scheduled-tasks]]", "[[src-tan-loops-you-can-trust]]", "[[src-tan-benny-automation]]"]
+sources: ["[[src-claude-code-scheduled-tasks]]", "[[src-tan-loops-you-can-trust]]", "[[src-tan-benny-automation]]", "[[src-openprose]]"]
 created: 2026-10-11
-updated: 2026-10-12
+updated: 2026-10-19
 status: draft
 ---
 # Event-driven loop
@@ -20,6 +20,9 @@ It is an alternative [[trigger]] and a cheaper form of [[observation]].
 
 ## Worked example: Slack-triggered maintenance
 Tan's **benny** is a pair of Cursor Automations triggered by each new top-level report in a Slack issue channel. A second automation is triggered by the first one's verdict marker in the thread ([[src-tan-loops-you-can-trust]], [[src-tan-benny-automation]]). See [[stage-gated-pipeline]].
+
+## Wakes, not a long session
+OpenProse treats *"Timers, source changes, upstream receipts, and manual requests"* all as events: *"wakeups, not … reasons to keep one AI session alive forever."* HTTP triggers are acknowledged before the render finishes, so long AI work does not hold webhook callers open ([[src-openprose]]). See [[reconciler-loop]].
 
 ## Contradictions & open questions
 - There are still no first-party docs for Claude Code Channels in the wiki. See [[open-questions]].

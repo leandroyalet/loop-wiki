@@ -4,7 +4,7 @@ branch: patterns
 tags: [loop-engineering, hub, patterns]
 sources: []
 created: 2026-10-11
-updated: 2026-10-12
+updated: 2026-10-19
 status: draft
 ---
 # Loop patterns
@@ -21,6 +21,8 @@ Recurring loop shapes. Each one makes a particular choice for the [[anatomy]] sl
 - [[goal-loop]]: keeps taking turns until a verifiable condition holds.
 - [[event-driven-loop]]: wakes on pushed events instead of polling.
 - [[babysitter-loop]]: tends a PR or deploy until it is green.
+- [[reconciler-loop]]: keeps a standing goal true. A deterministic fingerprint check skips unchanged work, and each wake gets one bounded render.
+- [[evolutionary-loop]]: evaluation rewrites the spec for the next generation, until the spec converges (Ouroboros).
 - [[improvement-loops]]: drive a metric such as coverage, lint, duplication or entropy, one fix per iteration.
 
 **Systems of loops**

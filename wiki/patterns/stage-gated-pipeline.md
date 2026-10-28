@@ -2,9 +2,9 @@
 type: pattern
 branch: patterns
 tags: [loop-engineering, pattern, pipeline, maintenance, automation]
-sources: ["[[src-tan-loops-you-can-trust]]", "[[src-tan-benny-automation]]", "[[src-tan-how-i-use-cursor]]", "[[src-tan-pstack-guide-overnight]]"]
+sources: ["[[src-tan-loops-you-can-trust]]", "[[src-tan-benny-automation]]", "[[src-tan-how-i-use-cursor]]", "[[src-tan-pstack-guide-overnight]]", "[[src-omp]]", "[[src-osmani-claude-code-code-review]]"]
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-27
 status: draft
 ---
 # Stage-gated pipeline (triage → repro → fix → verify)
@@ -35,6 +35,21 @@ From [[src-tan-benny-automation]]:
 - Per-stage budgets.
 
 See [[guardrails-and-permissions]].
+
+## A second line: robomp (omp)
+From [[src-omp]]. This one runs as **one session per issue**, with stages enforced by prompts and host tools rather than by separate automations:
+
+| Stage | Can stop with | Gate |
+|---|---|---|
+| Classify (before any comment, push or PR) | `wontfix`, `question`, `duplicate`, `invalid`, `enhancement` | a 5-part `bug` merit gate: broken contract, demonstrated impact, not a deliberate tradeoff, this repo's defect, true premise |
+| Reproduce | `mark_unable_to_reproduce`: asks the reporter for details and resumes the same session on reply | *"No PR without a recorded repro"* (`repro_record`) |
+| Fix | `abort_task` for environment faults | root cause only. *"NEVER suppress warnings, special-case inputs"*. |
+| Publish | push refusals. *"Two identical consecutive push rejections → … escalate; NEVER loop"* | `bun run fix` + `bun check` + the full test suite before `gh_open_pr`. The PR body must have `## Repro / Cause / Fix / Verification`. |
+
+The same handoff rule as benny applies: the PR carries the evidence. A maintainer's "works as designed" at any stage makes the bot stop at once, without arguing.
+
+## A third line: the life of a change (Claude Code team)
+From [[src-osmani-claude-code-code-review]]. This line gates a *change* rather than a bug report: pre-PR verification → AI review → security review → CI → risk-tiered human approval → merge queue → flag and staged rollout, with fast rollback under all of it. Open findings from either review, red CI, or a missing required approval each stop the line. Its difference from benny and robomp is that the stages are **layers that each miss some bugs**, and recovery is designed in as a last layer instead of assumed away. Full page: [[layered-code-review]].
 
 ## Why staged *(synthesis)*
 Each stage has its own small [[goal-spec]] and its own [[verification]]. This is Grove's *"catch defects at the lowest value stage"* ([[src-tan-loops-you-can-trust]]) applied to the pipeline as a whole. Compare Osmani's single morning triage loop, which runs triage, fix and review inside one automation ([[src-osmani-loop-engineering]]), and Pocock's human-gated triage ([[src-pocock-triage-skill]]).

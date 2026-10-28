@@ -2,9 +2,9 @@
 type: synthesis
 branch: syntheses
 tags: [loop-engineering, synthesis, comparison]
-sources: ["[[src-huntley-ralph]]", "[[src-claude-code-scheduled-tasks]]", "[[src-osmani-loop-engineering]]", "[[src-anthropic-building-effective-agents]]", "[[src-pocock-ralph-tips]]", "[[src-pocock-ai-coding-dictionary]]", "[[src-tan-pstack-guide-overnight]]", "[[src-tan-benny-automation]]"]
+sources: ["[[src-huntley-ralph]]", "[[src-claude-code-scheduled-tasks]]", "[[src-osmani-loop-engineering]]", "[[src-anthropic-building-effective-agents]]", "[[src-pocock-ralph-tips]]", "[[src-pocock-ai-coding-dictionary]]", "[[src-tan-pstack-guide-overnight]]", "[[src-tan-benny-automation]]", "[[src-anthropic-fold-subagents]]"]
 created: 2026-10-11
-updated: 2026-10-12
+updated: 2026-10-27
 status: draft
 ---
 # Loop pattern comparison
@@ -31,6 +31,7 @@ The outer-loop patterns compared slot by slot. See the pattern pages for citatio
 - **Can the agent verify its own work yet?** If not, build a [[verification-skill]] before any loop ([[src-tan-loops-you-can-trust]]). See [[earned-autonomy]].
 - **Can a human review every output?** If not, you are building a dark factory. Decide that on purpose ([[src-pocock-ai-coding-dictionary]]). See [[software-factory]].
 - **Does the loop accumulate context?** Prefer a fresh process per iteration for build work ([[src-pocock-ralph-tips]]). See [[smart-zone]].
+- **One agent or many?** Default to one loop with skills and tools loaded on demand. Split into subagents only by context (independent research, clean-interface components, black-box verification), not by team or problem type ([[src-anthropic-fold-subagents]]). See [[folding-subagents]] and [[orchestrator-workers]].
 - **Does timing vary?** If so, prefer self-paced or event-driven over a fixed cron ([[src-claude-code-scheduled-tasks]]).
 
 ## Related

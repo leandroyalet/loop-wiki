@@ -2,9 +2,9 @@
 type: concept
 branch: control
 tags: [loop-engineering, control, worktrees, parallelism]
-sources: ["[[src-osmani-loop-engineering]]", "[[src-tns-loop-engineering]]", "[[src-anthropic-building-effective-agents]]", "[[src-pocock-getting-started-with-ralph]]", "[[src-pocock-ralph-tips]]", "[[src-pocock-git-guardrails-hook]]", "[[src-tan-complete-guide-pstack-pt1]]", "[[src-tan-pstack-guide-poteto-mode]]", "[[src-tan-loops-you-can-trust]]"]
+sources: ["[[src-osmani-loop-engineering]]", "[[src-tns-loop-engineering]]", "[[src-anthropic-building-effective-agents]]", "[[src-pocock-getting-started-with-ralph]]", "[[src-pocock-ralph-tips]]", "[[src-pocock-git-guardrails-hook]]", "[[src-tan-complete-guide-pstack-pt1]]", "[[src-tan-pstack-guide-poteto-mode]]", "[[src-tan-loops-you-can-trust]]", "[[src-agentos-docs]]"]
 created: 2026-10-11
-updated: 2026-10-12
+updated: 2026-10-16
 status: draft
 ---
 # Isolation (worktrees and sandboxes)
@@ -21,6 +21,8 @@ Worktrees let teams *"run agents in parallel … without corrupting the main bra
 
 - **Cloud agents (Cursor):** each gets its own VM and branch, so it can install dependencies, run the app and record video without touching your machine. A snapshot makes later starts fast ([[src-tan-complete-guide-pstack-pt1]], [[src-tan-pstack-guide-poteto-mode]]).
 - **Runtime isolation, not just files:** shared ports, processes and user data made two agents on one dev build *"interfere with each other in hilarious ways."* Each needs its own checkout, build, ports and browser state ([[src-tan-loops-you-can-trust]]).
+
+- **Tool-layer isolation ([[agentos]]):** each skill call runs in a fresh subprocess with *"no shared state between skill runs"*. Each connection is a sandboxed identity keyed by domain, so a compromised skill *"cannot reach across identities"*. Skills and apps only meet through the engine, by capability ([[src-agentos-docs]]). The docs admit that this decoupling is enforced by convention and review, not by the engine binary.
 
 ## Limits
 - A sandbox isolates **where**, not **what**. Destructive git commands inside the mounted repo still work, so add hook guardrails ([[src-pocock-git-guardrails-hook]]). See [[guardrails-and-permissions]].

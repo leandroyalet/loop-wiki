@@ -2,9 +2,9 @@
 type: hub
 branch: root
 tags: [loop-engineering, hub, root]
-sources: ["[[src-osmani-loop-engineering]]", "[[src-tns-loop-engineering]]", "[[src-anthropic-building-effective-agents]]", "[[src-huntley-ralph]]", "[[src-claude-code-scheduled-tasks]]", "[[src-pocock-ai-coding-dictionary]]", "[[src-pocock-ralph-plugin]]", "[[src-pocock-ralph-tips]]", "[[src-tan-loops-you-can-trust]]", "[[src-tan-pstack-guide-overnight]]"]
+sources: ["[[src-osmani-loop-engineering]]", "[[src-tns-loop-engineering]]", "[[src-anthropic-building-effective-agents]]", "[[src-huntley-ralph]]", "[[src-claude-code-scheduled-tasks]]", "[[src-pocock-ai-coding-dictionary]]", "[[src-pocock-ralph-plugin]]", "[[src-pocock-ralph-tips]]", "[[src-tan-loops-you-can-trust]]", "[[src-tan-pstack-guide-overnight]]", "[[src-osmani-claude-code-code-review]]", "[[src-anthropic-fold-subagents]]"]
 created: 2026-10-11
-updated: 2026-10-12
+updated: 2026-10-27
 status: draft
 ---
 # Loop Engineering
@@ -50,7 +50,8 @@ status: draft
 5. **Bound every loop.** Use iteration caps ([[src-anthropic-building-effective-agents]]), goal conditions, and expiry: Claude Code recurring tasks die after 7 days so *"a forgotten loop"* can't run forever ([[src-claude-code-scheduled-tasks]]). See [[termination]] and [[budgets-and-cost]].
 6. **Fresh context per iteration.** Each iteration should start in the model's [[smart-zone]]. Restart the process instead of accumulating one long session ([[src-pocock-ralph-plugin]], [[src-huntley-ralph]]). Size tasks accordingly. See [[task-sizing]].
 7. **Earn autonomy.** Start [[human-in-the-loop]], go [[afk]] once the loop is trusted, and always cap iterations or give a pass/fail finish condition ([[src-pocock-ralph-tips]], [[src-tan-pstack-guide-overnight]]). End runs in a reviewable PR, not a merge ([[src-pocock-ai-coding-dictionary]]). Let any stage stop the line ([[src-tan-loops-you-can-trust]]). See [[earned-autonomy]].
-8. **Loops raise the stakes on human judgment.** Comprehension debt and cognitive surrender grow faster with a smooth loop ([[src-osmani-loop-engineering]]). See [[operator-debts]].
+8. **Layer the checks and make mistakes cheap to undo.** No single check is the gate. The Claude Code team stacks imperfect automated and human layers over fast rollback, scales human approval by risk, and requires its own maker/checker review loop to converge ([[src-osmani-claude-code-code-review]]). See [[layered-code-review]] and [[rollback-and-recovery]].
+9. **Loops raise the stakes on human judgment.** Comprehension debt and cognitive surrender grow faster with a smooth loop ([[src-osmani-loop-engineering]]). See [[operator-debts]].
 
 ## Lineage (one line, by design)
 Prompt engineering → context engineering → harness engineering → loop engineering, *"in fewer than 18 months"* ([[src-tns-loop-engineering]]). The practitioner version is vibe coding → planning → multi-phase plans → Ralph ([[src-pocock-ralph-tips]]). Ralph ([[src-huntley-ralph]], 2025) is the pre-name ancestor. See [[loop-vs-prompt-engineering]].
@@ -59,7 +60,8 @@ Prompt engineering → context engineering → harness engineering → loop engi
 - **Idempotency** now has a principle-level source ([[src-tan-pstack-loop-principles]]) but no worked failure case. See [[idempotency]].
 - **Observability** has some practitioner tactics now, such as streaming and notifications, but no systematic source. See [[observability]].
 - **In-session vs fresh-context loops.** It is unresolved whether Claude Code's `/loop` and `/goal`, or Cursor's `/loop`, suffer the context build-up Pocock describes. Tan's overnight loops run in-session and lean on subagents. See [[smart-zone]].
-- **Human merge gate.** Tan's Autopilot-full merges on verifier verdicts alone. Pocock and Osmani keep humans on PRs. See [[software-factory]].
+- **Human merge gate.** Tan's Autopilot-full merges on verifier verdicts alone. Pocock and Osmani keep humans on PRs. The Claude Code team now scales the gate by risk: zero, one or two humans, with low-risk changes auto-merging in its own repos ([[src-osmani-claude-code-code-review]]). See [[software-factory]] and [[layered-code-review]].
+- **One loop or many agents?** Anthropic's Applied AI team now advises folding most subagents into one loop with skills, tools and [[progressive-disclosure]] ([[src-anthropic-fold-subagents]]), while loop builders lean on subagents to keep windows fresh. See [[folding-subagents]] and [[open-questions]] (#30).
 - **Codex** is described only second-hand. See [[openai-codex]].
 - Full list: [[open-questions]].
 

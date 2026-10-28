@@ -23,6 +23,8 @@ Catalog of every wiki page, grouped by branch. Read this first when answering a 
 - [[goal-loop]]: run until a verifiable condition holds, graded by a separate model
 - [[event-driven-loop]]: Channels and Monitor instead of polling
 - [[babysitter-loop]]: tend a PR, deploy or release branch until green
+- [[reconciler-loop]]: standing goal kept true; deterministic fingerprint skip, one bounded render per wake (OpenProse)
+- [[evolutionary-loop]]: evaluation feeds the next spec; stops on spec convergence (Ouroboros)
 - [[improvement-loops]]: coverage, lint, duplication, entropy and migration loops; one fix per iteration
 - [[stage-gated-pipeline]]: triage → repro → fix → verify; every stage can stop the line and hands evidence forward
 - [[software-factory]]: triggers start sessions; dark factory = nobody reviews the output
@@ -38,8 +40,10 @@ Catalog of every wiki page, grouped by branch. Read this first when answering a 
 - [[isolation]]: worktrees and sandboxes for parallel and unattended work
 - [[observability]]: seeing what a loop did and why (streaming, notifications, logs; still thin)
 - [[earned-autonomy]]: verification is the limiting step; the trust ladder before going unattended
+- [[rollback-and-recovery]]: flags, staged rollout, one-step revert and keep-or-discard; recovery is what buys lighter review
 - [[idempotency]]: safe re-runs after crashes, retries and duplicate fires
 - [[smart-zone]]: context rot, dumb zone, fresh context per iteration
+- [[progressive-disclosure]]: skills, tool search and knowledge bases loaded on demand; tool choice degrades past ~30–50 definitions
 - [[agent-experience]]: AX, "the repo wins", deep and grey-box modules
 - [[failure-modes]]: a table of how loops go wrong and the mitigations
 - [[operator-debts]]: comprehension debt, cognitive surrender, intent debt, orchestration tax
@@ -48,6 +52,7 @@ Catalog of every wiki page, grouped by branch. Read this first when answering a 
 - [[loop-primitives]]: five building blocks + memory, mapped to Claude Code and Codex
 - [[writing-a-loop-prompt]]: structure, principles and Pocock's prompt blocks
 - [[task-sizing]]: one thing per iteration, tracer bullets, vertical TDD, risk first
+- [[folding-subagents]]: collapse orchestrator + specialists into one loop; keep a subagent only for bloat, parallel fresh windows or tool conflicts; migrate one at a time against an eval
 - [[building-a-ralph-loop]]: Pocock's recipe: HITL→AFK scripts, sandbox, streaming, guardrails
 - [[seven-phases-of-ai-development]]: the workflow around the execution loop
 - [[backlog-triage]]: the issue state machine ending in `ready-for-agent`
@@ -56,6 +61,8 @@ Catalog of every wiki page, grouped by branch. Read this first when answering a 
 - [[build-the-lever]]: scripts for deterministic steps; encode lessons in structure
 - [[claude-code-loop]]: `/loop` modes, `loop.md`, stopping, limits
 - [[claude-code-goal]]: `/goal` (second-hand, stub)
+- [[omp-loop-surfaces]]: omp's `/goal` (self-audit + token budget), `/loop --until`, `/ratchet`, advisor, TTSR, orchestrate/vibe
+- [[layered-code-review]]: the Claude Code team's review pipeline: six layers + rollback, risk tiers (0/1/2 humans), `REVIEW.md`, convergence rules
 - [[claude-code-scheduling]]: Routines vs Desktop vs `/loop` vs GitHub Actions
 - [[llm-wiki-pattern]]: Karpathy's LLM Wiki, read as a loop (this wiki's own design)
 
@@ -71,7 +78,11 @@ Catalog of every wiki page, grouped by branch. Read this first when answering a 
 - [[claude-code]]: product, loop surfaces
 - [[openai-codex]]: product, Automations, `/goal` (second-hand)
 - [[cursor]]: product; `/loop`, Automations, cloud agents, Projects (via Tan)
-- [[pstack]]: Tan's skill plugin; `/poteto-mode`, 23 playbooks, 24 principles
+- [[agentos]]: local agent-first tool surface and memory graph over MCP; observer bus; propose ↔ review skill
+- [[omp]]: open-source harness (Pi fork); harness-as-variable; robomp factory bot
+- [[ouroboros]]: spec-first layer over 14 runtimes; ambiguity gate, hidden graders, evolve loop
+- [[openprose]]: Markdown contracts (goals, not steps); executor/evaluator; fingerprint-reconciler runtime for standing goals
+- [[pstack]]: Tan's skill plugin; `/poteto-mode`, 23 playbooks, 24 principles, ~7k lines of enforcing scripts, critique, ports
 
 ## Sources ([[sources]])
 - [[src-osmani-loop-engineering]]: Osmani, "Loop Engineering", 2026-06-07
@@ -103,6 +114,13 @@ Catalog of every wiki page, grouped by branch. Read this first when answering a 
 - [[src-tan-benny-automation]]: pstack benny automation pack (README + FOR_AGENTS)
 - [[src-tan-pstack-loop-principles]]: six pstack principle skills relevant to loops
 - [[src-tan-x-short-posts]]: four short X posts by @poteto
+- [[src-agentos-docs]]: AgentOS docs (16 pages), Joe Contini, 2026
+- [[src-inside-pstack-report]]: third-party "Inside pstack" research report (v0.15.25), 2026-10-14
+- [[src-ouroboros]]: Ouroboros guide, README, evaluation and evolution docs, fetched 2026-10-19
+- [[src-omp]]: omp README, harness-problem post, loop prompts/docs, robomp, fetched 2026-10-19
+- [[src-osmani-claude-code-code-review]]: Osmani, "How the Claude Code team does code review" (X), 2026-10-26
+- [[src-anthropic-fold-subagents]]: Sarkis (Anthropic), "Building agents: When to fold subagents into your main agent loop", 2026-10-22
+- [[src-openprose]]: OpenProse site, kernel, std conventions, README and runtime spec (prose.md), fetched 2026-10-19
 
 ## Syntheses ([[syntheses]])
 - [[loop-vs-prompt-engineering]]: what changed, the lineage, harder or easier

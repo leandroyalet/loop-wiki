@@ -2,9 +2,9 @@
 type: practice
 branch: practice
 tags: [loop-engineering, practice, claude-code, goal]
-sources: ["[[src-osmani-loop-engineering]]", "[[src-tns-loop-engineering]]", "[[src-claude-code-scheduled-tasks]]", "[[src-pocock-ralph-plugin]]"]
+sources: ["[[src-osmani-loop-engineering]]", "[[src-tns-loop-engineering]]", "[[src-claude-code-scheduled-tasks]]", "[[src-pocock-ralph-plugin]]", "[[src-omp]]"]
 created: 2026-10-11
-updated: 2026-10-12
+updated: 2026-10-19
 status: stub
 ---
 # Claude Code `/goal`
@@ -20,6 +20,7 @@ From the secondary descriptions:
 ## Contradictions & open questions
 - `/goal` keeps working *across turns* in one session. Pocock's [[smart-zone]] critique of in-session loops may apply ([[src-pocock-ralph-plugin]]). Unverified. See [[open-questions]].
 - The official `/goal` docs page has **not been ingested**. Details such as turn limits, budgets and how the checker model is chosen are unconfirmed. See [[open-questions]].
+- **Compare omp's `/goal`,** which is documented first-hand: it is self-graded with a completion audit, has a token budget, and pauses on interrupt ([[src-omp]]). See [[omp-loop-surfaces]].
 
 ## Related
 [[claude-code-loop]] · [[termination]] · [[verification]]

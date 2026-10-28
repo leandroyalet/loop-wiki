@@ -1,22 +1,72 @@
 {
-  "collapse-filter": true,
+  "collapse-filter": false,
   "search": "path:wiki  ",
   "showTags": true,
   "showAttachments": false,
   "hideUnresolved": false,
-  "showOrphans": true,
-  "collapse-color-groups": true,
-  "colorGroups": [],
+  "showOrphans": false,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:wiki/entities  ",
+      "color": {
+        "a": 1,
+        "rgb": 16328306
+      }
+    },
+    {
+      "query": "path:wiki/control  ",
+      "color": {
+        "a": 1,
+        "rgb": 16619295
+      }
+    },
+    {
+      "query": "path:wiki/patterns  ",
+      "color": {
+        "a": 1,
+        "rgb": 10936878
+      }
+    },
+    {
+      "query": "path:wiki/practice  ",
+      "color": {
+        "a": 1,
+        "rgb": 15129460
+      }
+    },
+    {
+      "query": "path:wiki/syntheses  ",
+      "color": {
+        "a": 1,
+        "rgb": 11436543
+      }
+    },
+    {
+      "query": "path:wiki/anatomy",
+      "color": {
+        "a": 1,
+        "rgb": 6740463
+      }
+    },
+    {
+      "query": "path:wiki/sources",
+      "color": {
+        "a": 1,
+        "rgb": 7696734
+      }
+    }
+  ],
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
-  "collapse-forces": true,
+  "collapse-forces": false,
   "centerStrength": 0.518713248970312,
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.8526905559431729,
+  "scale": 0.8187118870652546,
   "close": true
 }

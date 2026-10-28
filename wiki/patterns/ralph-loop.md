@@ -2,9 +2,9 @@
 type: pattern
 branch: patterns
 tags: [loop-engineering, pattern, ralph, outer-loop]
-sources: ["[[src-huntley-ralph]]", "[[src-pocock-getting-started-with-ralph]]", "[[src-pocock-ralph-tips]]", "[[src-pocock-ralph-plugin]]"]
+sources: ["[[src-huntley-ralph]]", "[[src-pocock-getting-started-with-ralph]]", "[[src-pocock-ralph-tips]]", "[[src-pocock-ralph-plugin]]", "[[src-ouroboros]]"]
 created: 2026-10-11
-updated: 2026-10-12
+updated: 2026-10-19
 status: draft
 ---
 # Ralph loop
@@ -49,6 +49,7 @@ It is best for **greenfield** work and gets you about 90% of the way. *"There's 
 - **Existing codebases.** Osmani's flagship example runs daily on an existing repo ([[src-osmani-loop-engineering]]). Huntley would not use Ralph there. Pocock ran it on his own existing projects, AI Hero CLI tests and course-video-manager features, and warns that *"the repo wins"*, so clean up first ([[src-pocock-ralph-tips]]). See [[agent-experience]].
 - **Bash loop vs in-session plugin.** Anthropic's official Ralph plugin loops inside one session via a stop hook. Pocock says this *"guarantees"* a slide into the dumb zone, and recommends the bash loop ([[src-pocock-ralph-plugin]]).
 - **Maintainability.** Huntley asks *"by whom?"* and argues loops can fix what loops break. Osmani warns of comprehension debt. See [[operator-debts]].
+- **The name has spread.** [[ouroboros]] calls its persistent background evolution job `ooo ralph`. It differs from Huntley's in two ways: it rewrites the *spec* each generation, and it stops on convergence, stagnation, oscillation or a 30-generation cap ([[src-ouroboros]]). See [[evolutionary-loop]].
 
 ## Related
 [[failure-modes]] · [[loop-pattern-comparison]]

@@ -4,7 +4,7 @@ branch: entities
 tags: [loop-engineering, hub, entities]
 sources: []
 created: 2026-10-11
-updated: 2026-10-12
+updated: 2026-10-19
 status: draft
 ---
 # Entities
@@ -24,3 +24,7 @@ People, organisations and products that shape loop engineering. Up: [[loop-engin
 - [[anthropic]] → [[claude-code]]
 - [[openai-codex]]
 - [[cursor]] → [[pstack]]
+- [[agentos]]: a local agent-first tool surface and memory graph over MCP (Joe Contini)
+- [[omp]]: open-source coding-agent harness (Pi fork, Stencil Labs). Built-in `/goal`, `/loop`, `/ratchet` and advisor, plus the robomp factory bot.
+- [[ouroboros]]: a spec-first management layer over 14 coding agents. Interview → Seed → Evaluate → Evolve, with hidden graders.
+- [[openprose]]: Markdown contracts (goals, not steps), an executor/evaluator split, and a fingerprint-reconciler runtime for standing goals

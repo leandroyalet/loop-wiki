@@ -2,9 +2,9 @@
 type: concept
 branch: control
 tags: [loop-engineering, control, trust, autonomy]
-sources: ["[[src-tan-loops-you-can-trust]]", "[[src-tan-pstack-guide-overnight]]", "[[src-tan-how-i-use-cursor]]", "[[src-pocock-ralph-tips]]", "[[src-pocock-ai-coding-dictionary]]", "[[src-osmani-loop-engineering]]"]
+sources: ["[[src-tan-loops-you-can-trust]]", "[[src-tan-pstack-guide-overnight]]", "[[src-tan-how-i-use-cursor]]", "[[src-pocock-ralph-tips]]", "[[src-pocock-ai-coding-dictionary]]", "[[src-osmani-loop-engineering]]", "[[src-osmani-claude-code-code-review]]"]
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-27
 status: draft
 ---
 # Earned autonomy (trust before loops)
@@ -28,7 +28,11 @@ From [[src-tan-loops-you-can-trust]] and [[src-tan-pstack-guide-overnight]]:
 | Pocock | `ralph-once.sh` (HITL) → capped `afk-ralph.sh` (AFK), and use HITL for risky tasks ([[src-pocock-ralph-tips]]) |
 | Pocock's dictionary | *"One cron job that runs one kind of session and opens one reviewable PR is a factory … reviewing them shows how far the loop can be trusted before it's widened"* ([[src-pocock-ai-coding-dictionary]]) |
 | Osmani | *"a verifier you actually trust is the only reason you can walk away"* ([[src-osmani-loop-engineering]]) |
+| Claude Code team | risk tiers set by the change. *"Start strict, and progressively relax as you see evidence."* Owners now let some low-risk changes auto-merge when checks pass ([[src-osmani-claude-code-code-review]]) |
 | Huntley | the operator watches the stream and tunes Ralph *"like a guitar"* ([[src-huntley-ralph]]) |
+
+## Measuring the trust (Claude Code team)
+The [[claude-code]] team's evidence for relaxing human gates is measured, not felt: median and p95 human approvals per PR, human comments and wait time go down, while revert and incident rates must not go up. *"if these metrics increase, we haven't reduced human time, just relocated it."* Between June and September merged PRs more than doubled and the share reverted fell by more than 40% (self-reported). The reviewer itself is scored daily against past incidents ([[src-osmani-claude-code-code-review]]). See [[layered-code-review]].
 
 ## Contradictions & open questions
 - **What does full trust permit?** Tan's Autopilot-full merges PRs on a fresh verifier swarm's clean verdict, with no human review ([[src-tan-pstack-guide-overnight]]). She calls a *"dark factory for software"* a possible endpoint ([[src-tan-how-i-use-cursor]]). Pocock treats dark factories as a hazard ([[src-pocock-ai-coding-dictionary]]). See [[software-factory]].

@@ -2,9 +2,9 @@
 type: concept
 branch: anatomy
 tags: [loop-engineering, anatomy, scheduling]
-sources: ["[[src-osmani-loop-engineering]]", "[[src-claude-code-scheduled-tasks]]", "[[src-huntley-ralph]]", "[[src-pocock-ai-coding-dictionary]]", "[[src-pocock-getting-started-with-ralph]]", "[[src-tan-loops-you-can-trust]]", "[[src-tan-pstack-guide-overnight]]"]
+sources: ["[[src-osmani-loop-engineering]]", "[[src-claude-code-scheduled-tasks]]", "[[src-huntley-ralph]]", "[[src-pocock-ai-coding-dictionary]]", "[[src-pocock-getting-started-with-ralph]]", "[[src-tan-loops-you-can-trust]]", "[[src-tan-pstack-guide-overnight]]", "[[src-openprose]]", "[[src-omp]]"]
 created: 2026-10-11
-updated: 2026-10-12
+updated: 2026-10-19
 status: draft
 ---
 # Trigger
@@ -27,6 +27,9 @@ It is step 1 and the re-entry point after [[termination]] decides "go again."
 | Events or heartbeat | Cursor `/loop` re-checks the finish condition ([[src-tan-pstack-guide-overnight]]) | [[overnight-contract]] |
 | Issue labelled | `ready-for-agent` label → session that opens a PR ([[src-pocock-ai-coding-dictionary]]) | [[software-factory]], [[backlog-triage]] |
 | Another session finishing | PR opened → automated review → fix-up session ([[src-pocock-ai-coding-dictionary]]) | [[software-factory]] |
+| Previous turn yielded | omp `/loop` re-submits the prompt after every yield, optionally gated by `--until`/`--while` ([[src-omp]]) | [[omp-loop-surfaces]] |
+| GitHub webhook | robomp: `issues.opened`, comments, reviews and `workflow_run` go into a dedup queue, which starts a per-issue session ([[src-omp]]) | [[software-factory]] |
+| Upstream change, cadence tick, gateway event | the three wake sources of OpenProse responsibilities (input-, self- and external-driven). If no fingerprint moved, the wake is skipped ([[src-openprose]]) | [[reconciler-loop]] |
 | Human | a prompt, or a triage-inbox item picked up | [[human-in-the-loop]] |
 
 When triggers rather than people start sessions, you have a [[software-factory]] ([[src-pocock-ai-coding-dictionary]]).

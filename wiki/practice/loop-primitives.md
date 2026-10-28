@@ -2,9 +2,9 @@
 type: practice
 branch: practice
 tags: [loop-engineering, practice, building-blocks]
-sources: ["[[src-osmani-loop-engineering]]", "[[src-tns-loop-engineering]]", "[[src-pocock-git-guardrails-hook]]", "[[src-pocock-getting-started-with-ralph]]", "[[src-tan-complete-guide-pstack-pt1]]", "[[src-tan-pstack-guide-overnight]]"]
+sources: ["[[src-osmani-loop-engineering]]", "[[src-tns-loop-engineering]]", "[[src-pocock-git-guardrails-hook]]", "[[src-pocock-getting-started-with-ralph]]", "[[src-tan-complete-guide-pstack-pt1]]", "[[src-tan-pstack-guide-overnight]]", "[[src-openprose]]", "[[src-ouroboros]]"]
 created: 2026-10-11
-updated: 2026-10-12
+updated: 2026-10-19
 status: solid
 ---
 # Loop primitives (the building blocks)
@@ -45,7 +45,7 @@ Sources: [[src-tan-complete-guide-pstack-pt1]], [[src-tan-pstack-guide-overnight
 
 ## Contradictions & open questions
 - **Five or six?** Osmani's text lists five primitives *"and then one place to remember stuff"*, but his table has six rows. TNS calls them *"six building blocks"* ([[src-tns-loop-engineering]]). This is a counting convention, not a substantive disagreement.
-- **Portability:** the primitives match, but loop *definitions* don't move between tools. TNS predicts that whoever makes them portable wins ([[src-tns-loop-engineering]]). See [[open-questions]].
+- **Portability:** the primitives match, but loop *definitions* don't move between tools. TNS predicts that whoever makes them portable wins ([[src-tns-loop-engineering]]). [[openprose]] is the first attempt in the wiki: harness-agnostic Markdown contracts that any *"Prose-Complete"* host can run. Its caveat is that *"Portability does not imply identical model results or provide missing tools"* ([[src-openprose]]). [[ouroboros]] makes the same bet with a YAML Seed that runs on 14 host agents: *"the same Seed can be used with a different runtime"* ([[src-ouroboros]]). See [[open-questions]].
 
 ## Related
 [[scheduled-loop]] · [[loop-design-checklist]]
